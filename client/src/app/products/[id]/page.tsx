@@ -28,6 +28,7 @@ export default function ProductDetailPage() {
   const { addToCart } = useCart();
 
   const id = params.id as string;
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState<string>('');
@@ -39,7 +40,7 @@ export default function ProductDetailPage() {
     const loadProduct = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:5000/api/products/${id}`);
+        const res = await fetch(`${API_BASE_URL}/products/${id}`);
         if (res.ok) {
           const json = await res.json();
           if (json.success && json.data) {

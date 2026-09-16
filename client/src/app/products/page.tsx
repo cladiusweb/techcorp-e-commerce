@@ -48,11 +48,13 @@ function ProductsCatalogContent() {
   }, [searchParams]);
 
   // Fetch from backend API
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+
   useEffect(() => {
     const loadProducts = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch('http://localhost:5000/api/products');
+        const res = await fetch(`${API_BASE_URL}/products`);
         if (res.ok) {
           const data = await res.json();
           if (data.success && data.data?.length > 0) {
