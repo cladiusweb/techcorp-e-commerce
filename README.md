@@ -193,14 +193,6 @@ npm run dev
 
 ---
 
-## 👨‍💻 Author & Contributions
-
-Engineered to showcase modern full-stack application development, resilient software design, and scalable frontend UI patterns.
-
-- **Author:** [@cladiusweb](https://github.com/cladiusweb)
-- **Contributions:** Contributions and feedback are welcome. Feel free to submit a Pull Request or open an Issue.
-
----
 
 ## 📄 License
 
